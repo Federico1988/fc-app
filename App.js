@@ -4,11 +4,11 @@ import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello Baby! In My Cell!!! x2</Text>
+      <Text>Clickear el boton para ver "Hola Coder"</Text>
       <StatusBar style="auto" />
       <Button
-        onPress={() => Alert.alert('Simple Button pressed')}
-        title="Learn More"
+        onPress={() => Alert.alert('Hola Coder!')}
+        title="Click!"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
       />
