@@ -7,7 +7,7 @@ import uuid from 'react-native-uuid';
 export default function App() {
   const [newTitleProduct, setNewTitleProduct] = useState("");
   const [newPriceProduct, setNewPriceProduct] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState();
+  const [selectedProduct, setSelectedProduct] = useState({});
   const [products, setProducts] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -70,7 +70,7 @@ export default function App() {
       >
         <View>
           <Text>Esta seguro de borrar?</Text>
-          <Text></Text>
+          <Text>{selectedProduct.title}</Text>
           <Button title='Borrar' onPress={() => handlerDeleteProduct()}></Button>
           <Button title='CERRAR' onPress={() => setModalVisible(false)} />
         </View>
