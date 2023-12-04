@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Modal, Button, StyleSheet } from 'react-native';
 
-const ModalDelete = ({ product, onModal, visible, onDelete }) => {
+const ModalDelete = ({ product, visible,closeModal, onDelete }) => {
   return (
     <Modal
       visible={visible}
@@ -14,7 +14,7 @@ const ModalDelete = ({ product, onModal, visible, onDelete }) => {
           <Text style={styles.productTitle}>{product.title}</Text>
           <View style={styles.buttonContainer}>
             <Button title='Borrar' onPress={() => onDelete()} color="#e74c3c" />
-            <Button title='CERRAR' onPress={() => onModal(false)} />
+            <Button title='CERRAR' onPress={() => closeModal()} />
           </View>
         </View>
       </View>

@@ -30,6 +30,10 @@ export default function App() {
     setModalVisible(true);
 
   }
+  const closeModal = () => {
+    setModalVisible(false);
+
+  }
   const handlerDeleteProduct = () => {
     setProducts(current => current.filter(product => product.id != selectedProduct.id));
     setModalVisible(false);
@@ -54,6 +58,7 @@ export default function App() {
         product={selectedProduct}
         onModal={handlerModal}
         visible={modalVisible}
+        closeModal={closeModal}
         onDelete={handlerDeleteProduct}
       />
     </View >
