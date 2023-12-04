@@ -15,6 +15,7 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const handlerAddProduct = () => {
+    if (newTitleProduct === "" || newPriceProduct === "") return; //No lo agrego si esta vacio. TODO: dar un feedback en los textInput
     const newProduct = {
       id: uuid.v4(),
       title: newTitleProduct,
