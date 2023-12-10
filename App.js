@@ -2,9 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Button, Alert, FlatList, Modal } from 'react-native';
 import uuid from 'react-native-uuid';
-import ModalDelete from './src/components/ModalDelete';
-import AddProduct from './src/components/AddProduct';
-import ListProduct from './src/components/ListProduct';
+import ModalDelete from './Components/ModalDelete';
+import AddProduct from './Components/AddProduct';
+import Header from './Components/Header';
+import Home from './Screens/Home';
 
 
 export default function App() {
@@ -43,24 +44,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <AddProduct
-        newTitle={newTitleProduct}
-        newPrice={newPriceProduct}
-        setNewTitle={setNewTitleProduct}
-        setNewPrice={setNewPriceProduct}
-        addProduct={handlerAddProduct}
-      />
-      <ListProduct
-        products={products}
-        onModal={handlerModal}
-      />
-      <ModalDelete
-        product={selectedProduct}
-        onModal={handlerModal}
-        visible={modalVisible}
-        closeModal={closeModal}
-        onDelete={handlerDeleteProduct}
-      />
+      <Home/>
     </View >
   );
 }
@@ -71,8 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'start',
-    padding: 10,
-    marginTop: 62
   }
 
 });
